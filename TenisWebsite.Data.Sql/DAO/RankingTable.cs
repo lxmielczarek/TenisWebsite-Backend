@@ -12,5 +12,6 @@ namespace TenisWebsite.Data.Sql.DAO
         public int CompetitorDataId { get; set; }
         public int Position { get; set; }
         public virtual CompetitorData CompetitorData { get; set; }
+
     }
 }

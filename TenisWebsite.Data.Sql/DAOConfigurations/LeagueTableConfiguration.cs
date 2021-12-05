@@ -18,6 +18,7 @@ namespace TenisWebsite.Data.Sql.DAOConfigurations
             builder.Property(c => c.SetsWon).IsRequired();
             builder.Property(c => c.CompetitorDataId).IsRequired();
             builder.Property(c => c.LeagueId).IsRequired();
+            builder.Property(c => c.SeasonId).IsRequired();
 
 
             builder.HasOne(x => x.League)
@@ -28,6 +29,11 @@ namespace TenisWebsite.Data.Sql.DAOConfigurations
                .WithMany(x => x.LeagueTables)
                .OnDelete(DeleteBehavior.Restrict)
                .HasForeignKey(x => x.CompetitorDataId);
+
+            builder.HasOne(x => x.Season)
+               .WithMany(x => x.LeagueTables)
+               .OnDelete(DeleteBehavior.Restrict)
+               .HasForeignKey(x => x.SeasonId);
         }
     }
 }

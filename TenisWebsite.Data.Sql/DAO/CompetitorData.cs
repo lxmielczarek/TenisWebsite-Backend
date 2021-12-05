@@ -13,6 +13,7 @@ namespace TenisWebsite.Data.Sql.DAO
             MatchesPlayers2 = new List<Match>();
             Winners = new List<Match>();
             RankingTables = new List<RankingTable>();
+            Deleted = false;
         }
 
         public int CompetitorDataId { get; set; }
@@ -20,6 +21,8 @@ namespace TenisWebsite.Data.Sql.DAO
         public string LastName { get; set; }
         public string UserId { get; set; }
         public int LeagueId { get; set; }
+
+        public bool Deleted { get; set; }
 
         public virtual League League { get; set; }
         public virtual ICollection<LeagueTable> LeagueTables{get;set;}

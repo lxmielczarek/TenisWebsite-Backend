@@ -6,6 +6,7 @@ namespace TenisWebsite.Data.Sql.DAO
 {
     public class LeagueTable
     {
+
         public int LeagueTableId { get; set; }
         public int MatechesWon { get; set; }
         public int MatchesLoss { get; set; }
@@ -15,8 +16,12 @@ namespace TenisWebsite.Data.Sql.DAO
         public int Points { get; set; }
         public int Position { get; set; }
         public int LeagueId { get; set; }
+
+        public int SeasonId { get; set; }
         public virtual League League { get; set; }
         public virtual CompetitorData CompetitorData { get; set; }
+
+        public virtual Season Season { get; set; }
 
     }
 }

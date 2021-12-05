@@ -43,7 +43,39 @@ namespace TenisWebsite.Data.Sql.Migrations
             await _context.AddAsync(league2);
             await _context.AddAsync(league3);
             await _context.AddAsync(league4);
+
+            Season season1 = new Season
+            {
+                SeasonId = 1,
+                Name = "2019/2020",
+                active_bit = false
+            };
+
+            Season season2 = new Season
+            {
+                SeasonId = 2,
+                Name = "2020/2021",
+                active_bit = true
+            };
+
+            Season season3 = new Season
+            {
+                SeasonId = 3,
+                Name = "2021/2022",
+            };
+           
+            await _context.AddAsync(league1);
+            await _context.AddAsync(league2);
+            await _context.AddAsync(league3);
+            await _context.AddAsync(league4);
+
+            await _context.AddAsync(season1);
+            await _context.AddAsync(season2);
+            await _context.AddAsync(season3);
+
             await _context.SaveChangesAsync();
+
+
 
         }
     }

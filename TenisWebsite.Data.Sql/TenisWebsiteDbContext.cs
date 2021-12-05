@@ -22,6 +22,7 @@ namespace TenisWebsite.Data.Sql
         public virtual DbSet<Match> Match { get; set; }
         public virtual DbSet<LeagueTable> LeagueTable { get; set; }
         public virtual DbSet<RankingTable> RankingTable { get; set; }
+        public virtual DbSet<Season> Season { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -30,6 +31,7 @@ namespace TenisWebsite.Data.Sql
             builder.ApplyConfiguration(new LeagueTableConfiguration());
             builder.ApplyConfiguration(new MatchConfiguration());
             builder.ApplyConfiguration(new RankingTableConfiguration());
+            builder.ApplyConfiguration(new SeasonConfiguration());
         }
 
     }
